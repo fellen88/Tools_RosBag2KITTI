@@ -1,0 +1,3 @@
+<launch>
+    <node pkg = "data_process" type = "data_process" name = "data_process"/>
+</launch>

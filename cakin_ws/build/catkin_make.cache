@@ -1,2 +1,0 @@
-obstacle_detection
--DCATKIN_DEVEL_PREFIX=/home/fellen/data_process/devel -DCMAKE_INSTALL_PREFIX=/home/fellen/data_process/install -G Unix Makefiles
