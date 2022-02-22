@@ -23,7 +23,13 @@ public:
 
     void lidarCallback(const sensor_msgs::PointCloud2::ConstPtr& lidar);
 
-    void cameraCallback(const sensor_msgs::ImageConstPtr& camera);
+    void camera200Callback(const sensor_msgs::ImageConstPtr& camera);
+
+    void camera1Callback(const sensor_msgs::ImageConstPtr& camera);
+    void camera2Callback(const sensor_msgs::ImageConstPtr& camera);
+    void camera3Callback(const sensor_msgs::ImageConstPtr& camera);
+    void camera4Callback(const sensor_msgs::ImageConstPtr& camera);
+
 
 private:
 
@@ -32,17 +38,24 @@ private:
 	pcl::PointCloud<pcl::PointXYZI> lidar_cloud;
 
 	long long lidar_index;// todo 上限
+	long long camera_index;
 	bool camera_captured;// sampling
+	bool lidar_captured;
 
 	bool init_camera_time;
 	bool init_lidar_time;
 	
 	long long camera_base_time;
 	long long lidar_base_time;
+	long long lidar_derta_time_gelobal;
 
     // subscriber
     ros::Subscriber sub_lidar;
-    image_transport::Subscriber sub_camera;
+	ros::Subscriber sub_camera200;
+	ros::Subscriber sub_camera1;
+	ros::Subscriber sub_camera2;
+	ros::Subscriber sub_camera3;
+	ros::Subscriber sub_camera4;
 	image_transport::ImageTransport it;
 
 };
